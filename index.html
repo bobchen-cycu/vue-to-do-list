@@ -11,6 +11,7 @@
 <h1>my to do list</h1>
 <div id="app">
     <h2>Todos:</h2>
+    <input type="text" v-model="inputValue" v-on:keyup.enter="add"/>
     <ol>
       <li v-for="todo in todos">
         <label>
