@@ -3,14 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>JS Bin</title>
+  <title>to do</title>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
 <h1>my to do list</h1>
 <div id="app">
-  {{ message }}
-</div>
+    <h2>Todos:</h2>
+    <ol>
+      <li v-for="todo in todos">
+        <label>
+          <input type="checkbox"
+            v-on:change="toggle(todo)"
+            v-bind:checked="todo.done">
+  
+          <del v-if="todo.done">
+            {{ todo.text }}
+          </del>
+          <span v-else>
+            {{ todo.text }}
+          </span>
+        </label>
+      </li>
+    </ol>
+  </div>  
 <script src="main.js"></script>
 </body>
 </html>
